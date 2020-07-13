@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import useSWR from "swr";
 import cheerio from "cheerio";
+import styles from "./topic.module.css";
 
 const fetcher = (...args) => fetch(...args).then(res => res.text());
 
@@ -46,9 +47,9 @@ export default function Topic() {
         </li>
       </ul>
       {posts.map(post => (
-        <div key={post.title}>
-          <h1>{post.title}</h1>
-          <h2>{post.author}</h2>
+        <div key={post.title} className={styles.topic}>
+          <h1 className={styles.title}>{post.title}</h1>
+          <h2 className={styles.author}>{post.author}</h2>
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
       ))}

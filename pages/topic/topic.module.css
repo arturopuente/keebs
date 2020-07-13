@@ -1,0 +1,22 @@
+.topic {
+  font-family: Avenir, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.topic img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 40px;
+}
+
+.author {
+  font-size: 22px;
+  line-height: 32px;
+  color: hsl(35, 100%, 50%);
+}
