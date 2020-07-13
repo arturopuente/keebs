@@ -1,0 +1,13 @@
+.listings {
+  font-family: Avenir, sans-serif;
+  font-size: 20px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.topic {
+  margin-bottom: 1.5em;
+}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import useSWR from "swr";
 import cheerio from "cheerio";
+import styles from "../listings.module.css";
 
 const fetcher = (...args) => fetch(...args).then(res => res.text());
 
@@ -36,14 +37,14 @@ export default function InterestChecks() {
   const listings = extract(data);
 
   return (
-    <div>
+    <div className={styles.listings}>
       <h1>Interest Checks</h1>
       <Link href="/gb">
         <a>Group Buys</a>
       </Link>
-      <ul>
+      <ul className={styles.list}>
         {listings.map(listing => (
-          <li key={listing.title}>
+          <li key={listing.title} className={styles.topic}>
             <Link href={`/topic/${listing.topic}`}>
               <a>
                 {listing.title} [{listing.author}]
