@@ -1,3 +1,4 @@
+import Link from "next/link";
 import useSWR from "swr";
 import cheerio from "cheerio";
 
@@ -19,6 +20,9 @@ const extract = data => {
       link: qx("span a")
         .attr("href")
         .replace(/PHPSESSID=.+\&/, ""),
+      topic: qx("span a")
+        .attr("href")
+        .split("topic=")[1],
       author: qx("p > a:first-child").text()
     });
   }
@@ -37,9 +41,11 @@ export default function InterestChecks() {
       <ul>
         {listings.map(listing => (
           <li key={listing.title}>
-            <a href={listing.link} target="_blank">
-              {listing.title} [{listing.author}]
-            </a>
+            <Link href={`/topic/${listing.topic}`}>
+              <a>
+                {listing.title} [{listing.author}]
+              </a>
+            </Link>
           </li>
         ))}
       </ul>
