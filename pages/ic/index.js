@@ -16,6 +16,9 @@ const extract = data => {
     const qx = cheerio.load(listings[i]);
     items.push({
       title: qx("span a").text(),
+      link: qx("span a")
+        .attr("href")
+        .replace(/PHPSESSID=.+\&/, ""),
       author: qx("p > a:first-child").text()
     });
   }
@@ -34,7 +37,9 @@ export default function InterestChecks() {
       <ul>
         {listings.map(listing => (
           <li key={listing.title}>
-            {listing.title} [{listing.author}]
+            <a href={listing.link} target="_blank">
+              {listing.title} [{listing.author}]
+            </a>
           </li>
         ))}
       </ul>
