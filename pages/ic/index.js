@@ -38,6 +38,9 @@ export default function InterestChecks() {
   return (
     <div>
       <h1>Interest Checks</h1>
+      <Link href="/gb">
+        <a>Group Buys</a>
+      </Link>
       <ul>
         {listings.map(listing => (
           <li key={listing.title}>

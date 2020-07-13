@@ -38,6 +38,9 @@ export default function GroupBuys() {
   return (
     <div>
       <h1>Group Buys</h1>
+      <Link href="/ic">
+        <a>Interest Checks</a>
+      </Link>
       <ul>
         {listings.map(listing => (
           <li key={listing.title}>
