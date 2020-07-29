@@ -1,10 +1,16 @@
-.topic {
+.container {
   font-family: Avenir, sans-serif;
+  margin: auto;
+  max-width: 800px;
+}
+
+.topic {
   font-size: 20px;
   line-height: 28px;
   overflow-wrap: break-word;
   overflow: hidden;
   padding-bottom: 20px;
+  font-weight: 500;
 }
 
 .topic div {
@@ -12,6 +18,7 @@
 }
 
 .topic img {
+  border-radius: 5px;
   height: auto;
   width: auto;
   max-width: 100%;
@@ -25,5 +32,14 @@
 .author {
   font-size: 22px;
   line-height: 32px;
-  color: hsl(35, 100%, 50%);
+  color: hsl(0, 0%, 45%);
+  font-weight: 500;
+}
+
+.externalLink {
+  font-weight: 500;
+  text-decoration: none;
+  color: hsl(0, 80%, 50%);
+  display: inline-block;
+  margin-left: 1em;
 }

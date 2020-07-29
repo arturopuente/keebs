@@ -1,0 +1,33 @@
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.topic {
+  margin-bottom: 0.5em;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  display: inline;
+}
+
+.link:visited {
+  color: gray;
+}
+
+.listingTitle {
+  font-size: 24px;
+  line-height: 0px;
+  font-weight: 500;
+  padding: 0 5px;
+  display: inline;
+  border-radius: 3px;
+}
+
+.topic:hover .listingTitle {
+  border-radius: 3px;
+  background: hsl(0, 80%, 50%);
+  color: white;
+}
