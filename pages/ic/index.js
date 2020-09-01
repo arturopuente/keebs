@@ -9,6 +9,7 @@ export default function InterestChecks() {
     <ListContainer>
       <Pagination {...{ page, nextPage, previousPage }} />
       <ListView items={data} />
+      <Pagination {...{ page, nextPage, previousPage }} />
     </ListContainer>
   );
 }
