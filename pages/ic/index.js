@@ -1,16 +1,14 @@
-import useSWR from "swr";
-import { ListContainer, ListView } from "../../components";
-import { extractList, fetcher, boardUrl } from "../../shared/api";
+import { ListContainer, ListView, Pagination } from "../../components";
+import usePaginatedQuery from "../../hooks/usePaginatedQuery";
 
 export default function InterestChecks() {
-  const { data } = useSWR(boardUrl("132.0"), fetcher, {
-    revalidateOnFocus: false
-  });
-  const listings = extractList(data);
+  const board = "132";
+  const { data, page, previousPage, nextPage } = usePaginatedQuery(board);
 
   return (
     <ListContainer>
-      <ListView items={listings} />
+      <Pagination {...{ page, nextPage, previousPage }} />
+      <ListView items={data} />
     </ListContainer>
   );
 }

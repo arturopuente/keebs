@@ -4,8 +4,8 @@ const PROXY_URL = "https://cors-anywhere.herokuapp.com/";
 const BASE_BOARD_URL = "https://geekhack.org/index.php?board=";
 const BASE_TOPIC_URL = "https://geekhack.org/index.php?topic=";
 
-const boardUrl = boardId => {
-  return PROXY_URL + BASE_BOARD_URL + boardId;
+const boardUrl = (boardId, page) => {
+  return PROXY_URL + BASE_BOARD_URL + boardId + "." + page;
 };
 
 const topicUrl = topicUrl => {
