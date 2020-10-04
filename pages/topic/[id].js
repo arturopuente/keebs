@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import styles from "./topic.module.css";
 import { Header, NavBar } from "../../components";
 import { extractTopic, fetcher, topicUrl, rawTopicUrl } from "../../shared/api";
 
@@ -13,23 +12,27 @@ export default function Topic() {
   const posts = extractTopic(data);
 
   return (
-    <div className={styles.container}>
-      <Header />
-      <NavBar />
+    <div className={"px-5 max-w-screen-lg mx-auto"}>
+      <div className={"py-5"}>
+        <NavBar />
+      </div>
       {posts.map(post => (
-        <div key={post.title} className={styles.topic}>
-          <h1 className={styles.title}>{post.title}</h1>
-          <h2 className={styles.author}>
-            Posted by: {post.author}
+        <div key={post.title} className={""}>
+          <h1 className={"text-2xl font-medium"}>{post.title}</h1>
+          <span>Author: {post.author}</span>
+          <h2 className={"space-x-3 mb-5"}>
             <a
-              className={styles.externalLink}
+              className={"text-green-300 hover:text-yellow-300"}
               target="_blank"
               href={rawTopicUrl(id)}
             >
               View original on GeekHack
             </a>
           </h2>
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div
+            className={"text-lg overflow-hidden pb-10"}
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </div>
       ))}
     </div>

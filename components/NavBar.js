@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import styles from "./NavBar.module.css";
 
 const options = [
   {
@@ -14,23 +12,16 @@ const options = [
 ];
 
 export default function NavBar() {
-  const router = useRouter();
-  const current = options.find(el => el.path === router.pathname);
-  const sorted = options.filter(el => el.path !== (current || {}).path);
-  if (current) {
-    sorted.unshift(current);
-  }
   return (
-    <div className={styles.container}>
-      {sorted.map(opt => (
-        <div className={styles.option} key={opt.path}>
-          {opt.path !== router.pathname ? (
-            <Link href={opt.path}>
-              <a>{opt.name}</a>
-            </Link>
-          ) : (
-            <span>{opt.name}</span>
-          )}
+    <div className={"mt-2 flex space-x-3"}>
+      {options.map(opt => (
+        <div
+          className={"text-xl text-green-300 hover:text-yellow-300"}
+          key={opt.path}
+        >
+          <Link href={opt.path}>
+            <a>{opt.name}</a>
+          </Link>
         </div>
       ))}
     </div>

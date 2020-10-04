@@ -1,5 +1,4 @@
 import Link from "next/link";
-import styles from "./index.module.css";
 import { Header } from "../components";
 
 const pages = [
@@ -17,14 +16,20 @@ const pages = [
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className={"container h-screen px-5 mx-auto"}>
       <Header />
-      <ul className={styles.list}>
+      <ul>
         {pages.map(page => (
-          <li className={styles.item}>
+          <li className={"my-5"} key={page.url}>
             <Link href={page.url}>
-              <a className={styles.link}>
-                <h2>{page.title}</h2>
+              <a>
+                <h2
+                  className={
+                    "text-2xl font-medium text-green-300 hover:text-yellow-300"
+                  }
+                >
+                  {page.title}
+                </h2>
                 <p>{page.subtitle}</p>
               </a>
             </Link>
