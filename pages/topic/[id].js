@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { Header, NavBar } from "../../components";
@@ -18,6 +19,9 @@ export default function Topic() {
       </div>
       {posts.map(post => (
         <div key={post.title} className={""}>
+          <Head>
+            <title>{post.title}</title>
+          </Head>
           <h1 className={"text-2xl font-medium"}>{post.title}</h1>
           <span>Author: {post.author}</span>
           <h2 className={"space-x-3 mb-5"}>
