@@ -8,10 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "cheerio": "1.0.0-rc.3",
     "next": "9.4.4",
-    "swr": "0.2.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "cheerio": "1.0.0-rc.3"
+    "swr": "0.2.3"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.8.10"
   }
 }
