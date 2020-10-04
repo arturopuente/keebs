@@ -25,6 +25,17 @@ export default function ListView({ items }) {
                 {page.number}
               </a>
             ))}
+            {item.pages.length === 0 && (
+              <a
+                className={
+                  "inline-block rounded bg-gray-700 border-gray-600 border-2 px-3 py-1 text-lg"
+                }
+                href={"https://geekhack.org/index.php?topic=" + item.topic}
+                target="_blank"
+              >
+                1
+              </a>
+            )}
           </div>
         </li>
       ))}
