@@ -25,6 +25,14 @@ const extractList = data => {
   const listings = query(listingQuery);
   for (var i = 0; i < listings.length; i++) {
     const qx = cheerio.load(listings[i]);
+    const pageQuery = qx(".navPages");
+    const pages = [];
+    for (var p = 0; p < pageQuery.length; p++) {
+      pages.push({
+        number: pageQuery[p].children[0].data,
+        link: pageQuery[p].attribs.href
+      });
+    }
     items.push({
       title: qx("span a").text(),
       link: qx("span a")
@@ -32,7 +40,8 @@ const extractList = data => {
         .replace(/PHPSESSID=.+\&/, ""),
       topic: qx("span a")
         .attr("href")
-        .split("topic=")[1]
+        .split("topic=")[1],
+      pages
     });
   }
   return items;
