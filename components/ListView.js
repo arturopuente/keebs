@@ -20,7 +20,6 @@ export default function ListView({ items }) {
                   "inline-block rounded bg-gray-700 border-gray-600 border-2 px-3 py-1 text-lg"
                 }
                 href={page.link}
-                target="_blank"
               >
                 {page.number}
               </a>
@@ -31,7 +30,6 @@ export default function ListView({ items }) {
                   "inline-block rounded bg-gray-700 border-gray-600 border-2 px-3 py-1 text-lg"
                 }
                 href={"https://geekhack.org/index.php?topic=" + item.topic}
-                target="_blank"
               >
                 1
               </a>
