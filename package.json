@@ -9,10 +9,10 @@
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.3",
-    "next": "9.4.4",
+    "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "swr": "0.2.3"
+    "swr": "0.3.5"
   },
   "devDependencies": {
     "postcss-flexbugs-fixes": "^4.2.1",
